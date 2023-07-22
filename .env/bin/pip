@@ -1,5 +1,5 @@
 #!/bin/sh
-'''exec' "/Users/mohamedds/Library/CloudStorage/GoogleDrive-mohamed.m.almahmoud@gmail.com/Mon Drive/Data Scientist/GitHub/flask/.env/bin/python" "$0" "$@"
+'''exec' "/Users/datatique/Library/CloudStorage/GoogleDrive-mohamed.m.almahmoud@gmail.com/Mon Drive/Data Scientist/GitHub/flask/.env/bin/python3.11" "$0" "$@"
 ' '''
 # -*- coding: utf-8 -*-
 import re
