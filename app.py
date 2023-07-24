@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, jsonify, request
 from passeword import passeword
 
 app = Flask(__name__)
@@ -13,6 +13,12 @@ def result():
   mdp = output['mdp']
   resultat = passeword(mdp)
   return render_template('result.html', resultat=resultat)
+
+@app.route('/api/data', methods=['GET'])
+def get_data():
+    data = {"mdp": "resultat"}
+    return jsonify(data)
+
 
 if __name__ == '__main__':
   app.run()
