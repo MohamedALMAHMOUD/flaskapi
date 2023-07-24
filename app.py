@@ -3,7 +3,7 @@ from flask_cors import CORS
 from passeword import passeword
 
 app = Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": "https://mohamedalmahmoud.github.io"}})
+CORS(app, resources={r"/api/*": {"origins": "https://mohamedalmahmoud.github.io/portfolio/templates/competences.html"}})
 
 
 @app.route('/')
@@ -12,8 +12,8 @@ def index():
 
 @app.route('/api/check_password', methods=['POST'])
 def check_password():
-  output = request.form.to_dict()
-  mdp = output['mdp']
+  data = request.json
+  mdp = data.get('mdp')
   resultat = passeword(mdp)
   return jsonify({"resultat": resultat})
 
