@@ -8,7 +8,7 @@ def index():
   return render_template('index.html')
 
 @app.route('/api/check_password', methods=['POST'])
-def result():
+def check_password():
   output = request.form.to_dict()
   mdp = output['mdp']
   resultat = passeword(mdp)
