@@ -1,5 +1,5 @@
 from flask import Flask, render_template, jsonify, request
-from flask import CORS
+from flask_cors import CORS
 from passeword import passeword
 
 app = Flask(__name__)
