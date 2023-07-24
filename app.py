@@ -3,7 +3,7 @@ from flask_cors import CORS
 from passeword import passeword
 
 app = Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": "https://mohamedalmahmoud.github.io/portfolio/templates/competences.html"}})
+CORS(app, resources={r"/api/*": {"origins": "https://mohamedalmahmoud.github.io"}})
 
 
 @app.route('/')
