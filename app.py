@@ -7,18 +7,19 @@ app = Flask(__name__)
 def index():
   return render_template('index.html')
 
+@app.route('/api/check_password', methods=['POST'])
+def result():
+  output = request.form.to_dict()
+  mdp = output['mdp']
+  resultat = passeword(mdp)
+  return jsonify({"resultat": resultat})
+
 @app.route('/result', methods=['POST'])
 def result():
   output = request.form.to_dict()
   mdp = output['mdp']
   resultat = passeword(mdp)
   return render_template('result.html', resultat=resultat)
-
-@app.route('/api/data', methods=['GET'])
-def get_data():
-    data = {"mdp": "resultat"}
-    return jsonify(data)
-
 
 if __name__ == '__main__':
   app.run()
