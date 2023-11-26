@@ -11,3 +11,4 @@ Werkzeug
 joblib
 pandas
 lightgbm
+sklearn
