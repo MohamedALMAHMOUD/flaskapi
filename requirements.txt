@@ -9,3 +9,4 @@ MarkupSafe
 packaging
 Werkzeug
 joblib
+pandas
