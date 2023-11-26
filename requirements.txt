@@ -12,3 +12,4 @@ joblib
 pandas
 lightgbm
 sklearn
+scikit-learn
