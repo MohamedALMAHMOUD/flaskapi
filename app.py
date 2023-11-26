@@ -24,6 +24,14 @@ class Data:
         self.INSTAL_DPD_MEAN = INSTAL_DPD_MEAN
         self.INSTAL_AMT_PAYMENT_SUM = INSTAL_AMT_PAYMENT_SUM
 
+@app.route('/doc')
+@auto.doc()
+def documentation():
+    '''
+    return API documentation page
+    '''
+    return auto.html()
+
 @app.route('/')
 def index():
   return render_template('index.html')
