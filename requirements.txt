@@ -10,3 +10,4 @@ packaging
 Werkzeug
 joblib
 pandas
+lightgbm
