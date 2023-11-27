@@ -2,9 +2,12 @@ from flask import Flask, render_template, jsonify, request
 from flask_cors import CORS
 import joblib
 import pandas as pd
+from flask_restplus import Api, Resource
+
 from passeword import passeword
 
 app = Flask(__name__)
+api = Api(app)
 CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 # Initialize model artifact files. This will be loaded at the start of Flask model server.
@@ -24,13 +27,11 @@ class Data:
         self.INSTAL_DPD_MEAN = INSTAL_DPD_MEAN
         self.INSTAL_AMT_PAYMENT_SUM = INSTAL_AMT_PAYMENT_SUM
 
-@app.route('/doc')
-@auto.doc()
-def documentation():
-    '''
-    return API documentation page
-    '''
-    return auto.html()
+@api.route('/hello')
+class HelloWorld(Resource):
+    def get(self):
+        """Exemple de documentation pour la route /hello"""
+        return {'message': 'Hello, World!'}
 
 @app.route('/')
 def index():
